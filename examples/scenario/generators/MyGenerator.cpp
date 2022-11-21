@@ -16,7 +16,7 @@ std::vector<Color32> MyGenerator::Generate(int sideSize,
           2 * (float)c / (float(sideSize) - 1);
       float ny =
           2 * (float)l / (float(sideSize) - 1);
-      float d = 1 - (1 - (nx * nx) * (1 - (ny * ny)));
+      float d = (.5 + (.5 + (nx * nx) * (.5 + (ny * ny)))) - (.5 - (.5 - (nx * nx) * (.5 - (ny * ny))));
 
       rgb += ((1 - d) * 255) / 2;
 
